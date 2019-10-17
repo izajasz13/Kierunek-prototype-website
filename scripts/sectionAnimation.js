@@ -1,6 +1,6 @@
 const changeSection = (current, next) => {
-    menuItems.forEach(ele => ele.removeEventListener('click', clickMenuItem));
-    window.removeEventListener('wheel', scrollSections);
+    menuItems.forEach(ele => ele.removeEventListener('click', onClickMenuItem));
+    window.removeEventListener('wheel', onScrollSections);
     const nav = document.querySelector('.navbar');
     const isDark = current.classList.contains('dark')
     if(isDark){
@@ -22,12 +22,12 @@ const changeSection = (current, next) => {
         current.classList.add('hidden');
         next.classList.add('active');
         next.classList.remove('animate');
-        menuItems.forEach(ele => ele.addEventListener('click', clickMenuItem));
-        window.addEventListener('wheel', scrollSections)
+        menuItems.forEach(ele => ele.addEventListener('click', onClickMenuItem));
+        window.addEventListener('wheel', onScrollSections)
     })
 }
 
-const scrollSections = (e) => {
+const onScrollSections = (e) => {
     e.prevetDefalt;
 
     const sections = document.querySelectorAll('.section');
@@ -48,7 +48,7 @@ const scrollSections = (e) => {
     }
 }
 
-const clickMenuItem = (e) => {
+const onClickMenuItem = (e) => {
     const currentSection = document.querySelector('.active');
     if(!currentSection) return;
 
@@ -59,6 +59,36 @@ const clickMenuItem = (e) => {
     changeSection(currentSection, newSection);
 }
 
-window.addEventListener('wheel', scrollSections);
+let startY = 0;
+let endY = 0;
+const onSwipe = () => {
+    const sections = document.querySelectorAll('.section');
+    const current = document.querySelector('.active')
+    if(!current) return;
+
+    let currentNumber = current.dataset.section;
+
+    if(startY / endY > 1.1){
+        if(currentNumber < 3){
+            changeSection(sections[currentNumber], sections[++currentNumber]);
+        }
+    }
+    if(startY / endY < 0.90){
+        if(currentNumber > 0){
+            changeSection(sections[currentNumber], sections[--currentNumber]);
+        }
+    }
+}
+const onTouchStart = (e) => {
+    startY = e.changedTouches[0].screenY
+}
+const onTouchEnd = (e) => {
+    endY = e.changedTouches[0].screenY;
+    onSwipe();
+}
+
+window.addEventListener('touchstart', onTouchStart);
+window.addEventListener('touchend', onTouchEnd);
+window.addEventListener('wheel', onScrollSections);
 const menuItems = document.querySelectorAll('.item');
-menuItems.forEach(ele => ele.addEventListener('click', clickMenuItem));
+menuItems.forEach(ele => ele.addEventListener('click', onClickMenuItem));
