@@ -1,0 +1,95 @@
+:root{
+    --main-color1: #124327;
+    --main-color2: #EAC5B1;
+    --complementary-color1: #CB6149;
+    --complementary-color2: #DCA82E;
+    --complementary-color3: #F2C671;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content-box{
+    position: relative;
+}
+.content-box .hidden{
+    display: none;
+}
+p{
+    font-family: 'Abhaya Libre', serif;
+}
+
+/* Navbar */
+.navbar{
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: absolute;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.navbar.dark, .navbar.light{
+    background: transparent;
+}
+.logo-img{
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+}
+.menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.menu .item{
+    cursor: pointer;
+}
+
+
+/* Section divs */
+.section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+    z-index: 1;
+    height: 0;
+    width: 0;
+    border-width: thin;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+.section.active{
+    height: 100vh;
+    width: 100vw;
+}
+.section.animate{
+    z-index: 2;
+    animation: sectionChange 3s;
+}
+.dark{
+    background-color: var(--main-color1);
+    color: var(--main-color2);
+    border-color: var(--main-color1);
+}
+.light{
+    background-color: var(--main-color2);
+    color: var(--main-color1);
+    border-color: var(--main-color2);
+}
+/* Animations */
+@keyframes sectionChange {
+    0% {height: 0vh; width: 0vw;}
+    30% {height: 100vh; width: 0vw;}
+    100% {height: 100vh; width: 100vw;}
+}
