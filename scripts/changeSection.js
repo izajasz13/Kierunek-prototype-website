@@ -1,6 +1,7 @@
-const changeSection = (current, next) => {
-    menuItems.forEach(ele => ele.removeEventListener('click', clickMenuItem));
-    window.removeEventListener('wheel', scrollSections);
+import {attachSectionListeners, removeSectionListeners} from './sectionListeners.js';
+
+export const changeSection = (current, next) => {
+    removeSectionListeners();
     const nav = document.querySelector('.navbar');
     const isDark = current.classList.contains('dark')
     if(isDark){
@@ -22,9 +23,6 @@ const changeSection = (current, next) => {
         current.classList.add('hidden');
         next.classList.add('active');
         next.classList.remove('animate');
-        menuItems.forEach(ele => ele.addEventListener('click', clickMenuItem));
-        window.addEventListener('wheel', scrollSections)
+        attachSectionListeners();
     })
 }
-
-export {changeSection};
