@@ -13,12 +13,13 @@
 .content-box{
     position: relative;
 }
-.content-box .hidden{
+body .hidden{
     display: none;
 }
 p{
     font-family: 'Abhaya Libre', serif;
 }
+
 
 /* Navbar */
 .navbar{
@@ -26,7 +27,6 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
     position: absolute;
     top: 0;
     height: 10vh;
@@ -37,17 +37,26 @@ p{
 .navbar.dark, .navbar.light{
     background: transparent;
 }
+.logo{
+    width:50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 .logo-img{
     width: 120px;
     height: auto;
     cursor: pointer;
+    margin: 0 2%;
 }
 .menu{
     width: 50%;
     display: flex;
     justify-content: space-between;
+    margin: 0 2%;
 }
 .menu .item{
+    text-transform: uppercase;
     cursor: pointer;
 }
 
@@ -87,6 +96,44 @@ p{
     color: var(--main-color1);
     border-color: var(--main-color2);
 }
+.left, .right{
+    margin: 3%;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    flex-direction: column;
+}
+.left .czas{
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+.slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 15px 12px rgba(0, 0, 0, 0.22), 0px 19px 38px rgba(0, 0, 0, 0.3);
+}
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right img{
+    width:100%;
+}
+.left img{
+    width: 100%;
+}
+
+
 /* Animations */
 @keyframes sectionChange {
     0% {height: 0vh; width: 0vw;}
