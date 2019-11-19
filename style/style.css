@@ -13,7 +13,7 @@
 .content-box{
     position: relative;
 }
-body .hidden{
+body .content-box .hidden{
     display: none;
 }
 p{
@@ -121,26 +121,48 @@ p{
     width:100%;
 }
 
-/*Grupy domowe*/
+/* Grupy domowe */
+.grupy .left{
+    width: 45%;
+    height: 80%;
+}
 .grupy .right{
-    height: 100%;
+    margin-top: 5%;
+    width: 55%;
+    height: 80%;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-around;
 }
-.grupa{
-    margin: 2%;
+.grupy .grupa{
+    width: 100%;
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
-.data{
-    margin-right: 3%;
+.grupy .data{
+    width: 25%;
+    text-align: right;
+    font-size: 2rem;
+    color: var(--complementary-color2);
 }
-.info{
+.grupy .more{
+    padding-left: 3%;
+    width: 75%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
 }
+.grupy .kto{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.grupy .gdzie{
+    font-size: 0.8rem;
+}
+
 
 /* Slider */
 .slider{
@@ -164,6 +186,55 @@ p{
     height: 100%;
 }
 
+/* O nas */
+.onas{
+    align-items: center;
+}
+.onas .lista-sluzb{
+    width:20%;
+    height: 80%;
+    margin-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.onas .sluzba{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.onas .more{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.onas .info{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.onas .description{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.onas .description img{
+    height: 80%;
+    width: auto;
+    overflow: hidden;
+}
+.onas .description > *{
+    margin: 15px;
+}
 
 /* Animations */
 @keyframes sectionChange {
