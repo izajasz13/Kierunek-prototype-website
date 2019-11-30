@@ -34,7 +34,7 @@ export class Slider{
             this.move();
         }else{
             ++this.current;
-            this.list.forEach(ele => ele.style.transition = "transform 0.7s ease-out");
+            this.list.forEach(ele => ele.style.transition = "transform 0.7s ease-in-out");
             this.list.forEach(ele => ele.style.transform = 'translateX(' + (-imgSize * this.current) + 'px)');
             setTimeout(()=>this.move(), this.time)
         }        

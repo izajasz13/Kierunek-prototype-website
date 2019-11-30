@@ -1,4 +1,4 @@
-let currentService = '.opis';
+let currentService = '.cytat';
 const listItems = document.querySelectorAll('.sluzba');
 
 const onListItemClick = (e) =>{

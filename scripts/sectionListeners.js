@@ -60,12 +60,24 @@ const onClickMenuItem = (e) => {
     changeSection(currentSection, newSection);
 }
 
+const onLogoClick = (e) => {
+    const currentSection = document.querySelector('.active');
+    if(!currentSection) return;
+;
+    const newSection = document.querySelector(`[data-section="0"]`);
+    if(currentSection === newSection) return;
+
+    changeSection(currentSection, newSection);
+}
+
 const menuItems = document.querySelectorAll('.item');
+const logo = document.querySelector('div.logo')
 export const attachSectionListeners = () => {
     window.addEventListener('touchstart', onTouchStart);
     window.addEventListener('touchend', onTouchEnd);
     window.addEventListener('wheel', onScrollSections);
     menuItems.forEach(ele => ele.addEventListener('click', onClickMenuItem));
+    logo.addEventListener('click', onLogoClick);
 }
 
 export const removeSectionListeners = () => {
@@ -73,4 +85,5 @@ export const removeSectionListeners = () => {
     window.removeEventListener('touchend', onTouchEnd);
     window.removeEventListener('wheel', onScrollSections);
     menuItems.forEach(ele => ele.removeEventListener('click', onClickMenuItem));
+    logo.removeEventListener('click', onLogoClick);
 }
