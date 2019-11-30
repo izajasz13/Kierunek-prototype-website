@@ -1,0 +1,34 @@
+:root{
+    --main-color1: #124327;
+    --main-color2: #EAC5B1;
+    --complementary-color1: #CB6149;
+    --complementary-color2: #DCA82E;
+    --complementary-color3: #F2C671;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content-box{
+    position: relative;
+}
+body .content-box .hidden{
+    display: none;
+}
+p{
+    font-family: 'Abhaya Libre', serif;
+}
+.button{
+    background-color: var(--complementary-color1);
+    width: 180px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 15px 12px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.button:active{
+    box-shadow: none;
+}

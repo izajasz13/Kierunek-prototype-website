@@ -1,0 +1,78 @@
+/* Section divs */
+.section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+    z-index: 1;
+    height: 0;
+    width: 0;
+    border-width: thin;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+.section.active{
+    height: 100vh;
+    width: 100vw;
+}
+.section.animate{
+    z-index: 2;
+    animation: sectionChange 2.5s ease-in-out;
+}
+.dark{
+    background-color: var(--main-color1);
+    color: var(--main-color2);
+    border-color: var(--main-color1);
+}
+.light{
+    background-color: var(--main-color2);
+    color: var(--main-color1);
+    border-color: var(--main-color2);
+}
+.left, .right{
+    margin: 3%;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left.pre-animate{
+    transform: translateX(-1500px);
+}
+.left.animate{
+    animation: slideLeft 2s ease-out;
+}
+.right.pre-animate{
+    transform: translateX(1500px);
+}
+.right.animate{
+    animation: slideRight 2s ease-out;
+}
+
+/* Animations */
+@keyframes sectionChange {
+    0% {height: 0vh; width: 0vw;}
+    30% {height: 100vh; width: 0vw;}
+    100% {height: 100vh; width: 100vw;}
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(-1500px);
+    }
+    100%{
+        transform: none;
+    }
+}
+@keyframes slideRight {
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: none;
+    }
+}

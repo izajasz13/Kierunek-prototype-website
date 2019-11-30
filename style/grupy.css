@@ -1,0 +1,42 @@
+/* Grupy domowe */
+.grupy .right{
+    width: 45%;
+    height: 80%;
+}
+.grupy .left{
+    margin-left: 1%;
+    margin-top: 5%;
+    width: 55%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.grupy .grupa{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.grupy .data{
+    width: 25%;
+    text-align: right;
+    font-size: 2rem;
+    color: var(--complementary-color2);
+}
+.grupy .more{
+    padding-left: 3%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.grupy .kto{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.grupy .gdzie{
+    font-size: 0.8rem;
+}

@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/slider.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/sections.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/grupy.css">
+    <link rel="stylesheet" href="style/onas.css">
+    <link rel="stylesheet" href="style/kontakt.css">
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Source+Sans+Pro:300,700&display=swap" rel="stylesheet">
     <title>Kierunek</title>
 </head>
@@ -30,19 +37,16 @@
             </div>
         </nav>
         <div class="main section dark active" data-section="0">
-            <div class="left">
+            <div class="left pre-animate">
+                <div class="slider1"></div>
+            </div>
+            <div class="right pre-animate">
                 <img src="img/cover1.png">
                 <div class="czas">każda niedziela 11:00</div>
             </div>
-            <div class="right">
-                <div class="slider1"></div>
-            </div>
         </div>
         <div class="grupy section hidden" data-section="1">
-            <div class="left">
-                <div class='slider2'></div>
-            </div>
-            <div class="right">
+            <div class="left pre-animate">
                 <div class="grupa">
                     <div class="data">
                         wtorki 19:00
@@ -148,9 +152,12 @@
                     </div>
                 </div>
             </div>
+            <div class="right pre-animate">
+                <div class='slider2'></div>
+            </div>
         </div>
         <div class="onas section hidden" data-section="2">
-            <div class="lista-sluzb separator">
+            <div class="left pre-animate lista-sluzb separator">
                 <div class="sluzba" data-item="pastorzy" data-value="0">
                     Pastorzy
                 </div>
@@ -182,10 +189,13 @@
                     Creative team
                 </div>
             </div>
-            <div class="more">
+            <div class="right pre-animate more">
                 <div class="info">
-                    <div class="description opis">
-                        <p>Cytat</p>
+                    <div class="cytat">
+                        <p>Wierzymy, że <span class="empty">miłość</span> polega na dawaniu tego co najlepsze.</p> 
+                        <p>Robimy wszystko z pasją, dbając o najwyższą <span class="empty">jakość</span>.</p>
+                        <p>Tworzmy miejsce otwrte w którym możesz <span class="empty">poczuć się jak w domu</span>. Wierzymy, że <span class="empty">niemożliwe nie istnieje</span>, a Boża dobroć nie zna granic. <span class="empty">Kochamy Wrocław</span>.</p>
+                        <p>Kochamy <span class="empty">Boga</span> | Kochamy ludzi | Kochamy życie</p>
                     </div>
                     <div class="description pastorzy hidden">
                         <h2>Pastorzy</h2>
@@ -240,8 +250,26 @@
                 </div>
             </div>
         </div>
-        <div class="section hidden" data-section="3">
-            Kontakt
+        <div class="kontakt section hidden" data-section="3">
+            <div class="left pre-animate">
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10025.023991290735!2d17.0108173!3d51.0852829!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1574584286738!5m2!1spl!2spl" frameborder="0" allowfullscreen="" class="mapaframe"></iframe>
+                </div>
+                <div class="info">
+                    <span>Każda niedziela 11:00</span>
+                    <span>Kościół Kierunek</span>
+                    <span>Powstańców Śląskich 159,</span>
+                    <span>53-110 Wrocław</span>
+                </div>
+            </div>
+            <div class="right pre-animate">
+                <form class="form">
+                    <input class="imie" type="text" placeholder="imię">
+                    <input class="email" type="text" placeholder="e-mail">
+                    <textarea rows="4" cols="50" class="wiadomość" placeholder="wiadomość"></textarea>
+                    <input type="button" class="button button-contact" value="Wyślij!">
+                </form>
+            </div>
         </div>
     </div>
     <script type="module" src="scripts/index.js"></script>

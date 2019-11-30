@@ -1,0 +1,38 @@
+/* Navbar */
+.navbar{
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.navbar.dark, .navbar.light{
+    background: transparent;
+}
+.logo{
+    width:50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logo-img{
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+    margin: 0 2%;
+}
+.menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2%;
+}
+.menu .item{
+    text-transform: uppercase;
+    cursor: pointer;
+}
