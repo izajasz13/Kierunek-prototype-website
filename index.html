@@ -267,11 +267,11 @@
                 </div>
             </div>
             <div class="right pre-animate">
-                <form class="form">
-                    <input class="imie" type="text" placeholder="imię">
-                    <input class="email" type="text" placeholder="e-mail">
-                    <textarea rows="4" cols="50" class="wiadomość" placeholder="wiadomość"></textarea>
-                    <input type="button" class="button button-contact" value="Wyślij!">
+                <form name="kontakt" class="form" method="POST" data-netlify="true">
+                    <input name="imie" class="imie" type="text" placeholder="imię">
+                    <input name="email" class="email" type="text" placeholder="e-mail">
+                    <textarea name="wiadomość" rows="4" cols="50" class="wiadomość" placeholder="wiadomość"></textarea>
+                    <input type="submit" class="button button-contact" value="Wyślij!">
                 </form>
             </div>
         </div>
