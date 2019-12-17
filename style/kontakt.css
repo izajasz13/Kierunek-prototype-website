@@ -39,6 +39,7 @@
     height: 200px;
 }
 .kontakt .button{
+    border: none;
     margin: 2%;
     background-color: var(--main-color1);
     color: #FFFFFF;
