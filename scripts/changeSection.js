@@ -1,25 +1,29 @@
-import {attachSectionListeners, removeSectionListeners} from './sectionListeners.js';
+import { attachSectionListeners, removeSectionListeners } from './sectionListeners.js';
+import { generateMainSlider, generateGrupySlider } from './slider.js';
+import { resetService } from './changeService.js';
 
 export const changeSection = (current, next) => {
     removeSectionListeners();
+    handleNavbar(current, next);
     const nav = document.querySelector('.navbar');
     const isDark = current.classList.contains('dark')
     if(isDark){
         nav.classList.remove('dark');
         nav.classList.add('light');
         next.classList.add('light');
-        if(next.classList.contains('onas')){
-            const paragraphs = next.querySelector('.cytat').querySelectorAll("p");
-            paragraphs.forEach(p => p.classList.add("light"));
+        if(next.classList.contains('onas') || next.classList.contains("main")){
+            const quote = next.querySelector('.cytat');
+            quote.classList.add("light");
+            const time = next.querySelector('.czas');
         }
         document.querySelector('.logo-img').src = "img/kierunek_dark.png";
     }else{
         nav.classList.remove('light');
         nav.classList.add('dark');
         next.classList.add('dark');
-        if(next.classList.contains('onas')){
-            const paragraphs = next.querySelector('.cytat').querySelectorAll("p");
-            paragraphs.forEach(p => p.classList.add("dark"));
+        if(next.classList.contains('onas') || next.classList.contains("main")){
+            const quote = next.querySelector('.cytat');
+            quote.classList.add("dark");
         }
         document.querySelector('.logo-img').src = "img/kierunek_light.png";
     }
@@ -28,16 +32,16 @@ export const changeSection = (current, next) => {
     const sectionAnimationEnd = (e) => {
         if(isDark){ 
             current.classList.remove('dark');
-            if(current.classList.contains('onas')){
-                const paragraphs = current.querySelector('.cytat').querySelectorAll("p");
-                paragraphs.forEach(p => p.classList.remove("dark"));
+            if(current.classList.contains('onas') || current.classList.contains("main")){
+                const quote = current.querySelector('.cytat');
+                quote.classList.remove("dark");
             }
         }
         else{
             current.classList.remove('light');
-            if(current.classList.contains('onas')){
-                const paragraphs = current.querySelector('.cytat').querySelectorAll("p");
-                paragraphs.forEach(p => p.classList.remove("light"));
+            if(current.classList.contains('onas') || current.classList.contains("main")){
+                const quote = current.querySelector('.cytat');
+                quote.classList.remove("light");
             }
         }
         current.classList.remove('active')
@@ -57,7 +61,25 @@ const animateLeftAndRight = (current, next) => {
     handleNewSection(next);
 }
 
+const handleNavbar = (current, next) => {
+    const currentNum = current.dataset.section;
+    const nextNum = next.dataset.section;
+    const currentNavbarItem = document.querySelector(`[data-item="${currentNum}"]`);
+    const nextNavbarItem = document.querySelector(`[data-item="${nextNum}"]`);
+    currentNavbarItem.classList.remove("current");
+    nextNavbarItem.classList.add("current");
+}
+
 const handleCurrentSection = (current) => {
+    if(current.classList.contains("onas")){
+        resetService();
+    }
+    if(current.classList.contains("main") || current.classList.contains("grupy")){
+        const slider = current.querySelector(".slider");
+        slider.innerHTML = "";
+        slider.classList.remove(...slider.classList);
+        slider.classList.add("slider");
+    }
     const oldLeft = current.querySelector(".left")
     const oldRight = current.querySelector(".right")
     oldLeft.classList.add("pre-animate");
@@ -65,6 +87,12 @@ const handleCurrentSection = (current) => {
 }
 
 export const handleNewSection = (next) => {
+    if(next.classList.contains("main")){
+        generateMainSlider();
+    }
+    if(next.classList.contains("grupy")){
+        generateGrupySlider();
+    }
     const left = next.querySelector(".left");
     const right = next.querySelector(".right");
     left.classList.remove("pre-animate");

@@ -11,7 +11,7 @@
 }
 .kontakt .info > *{
     color: #FFFFFF;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: var(--sans-serif-font);
     font-weight: bold;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -26,7 +26,7 @@
     align-items: center;
 }
 .kontakt input, .kontakt textarea{
-    font-family: 'Abhaya Libre', serif;
+    font-family: var(--serif-font);
     font-size: 1rem;
     border-radius: 20px;
     margin: 2%;
@@ -39,7 +39,7 @@
     height: 200px;
 }
 .kontakt .button{
-    margin: 1.5%;
+    margin: 2%;
     background-color: var(--main-color1);
     color: #FFFFFF;
     width: 250px;

@@ -1,4 +1,4 @@
-export class Slider{
+class Slider{
     constructor(slider, time, imgList, id){
         this.slider = slider;
         this.time = time;
@@ -8,7 +8,7 @@ export class Slider{
         slider.classList.add('slider');
         slider.classList.add(id);
         this.createSlides(imgList);
-        this.move();
+        setTimeout(() => this.move(), this.time);
     }
 
     createSlides(imgList){
@@ -39,4 +39,14 @@ export class Slider{
             setTimeout(()=>this.move(), this.time)
         }        
     }
+}
+
+export const generateMainSlider = () => {
+    const mainSlider = document.querySelector('.main .slider');
+    new Slider(mainSlider, 4000, ['img/odnowa_ig-05.png', 'img/grupy domowe.png'], 'mainSlider');
+}
+
+export const generateGrupySlider = () => {
+    const grupySlider = document.querySelector('.grupy .slider');
+    new Slider(grupySlider, 4000, ['img/odnowa_ig-05.png', 'img/grupy domowe.png'], 'grupySlider');
 }

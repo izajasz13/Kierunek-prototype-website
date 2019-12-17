@@ -1,14 +1,18 @@
-/* Main section */
+/* Main section +*/
+.main{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--sans-serif-font);
+}
 .main .right{
     flex-direction: column;
 }
 .main .czas{
-    text-transform: uppercase;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 700;
     font-size: 2rem;
-    color: #FFFFFF;
 }
-.main .left img, .main .right img{
-    width:100%;
+.main .cytat{
+    font-size: 6rem;
+}
+.main .cytat div{
+    margin: 2%;
 }

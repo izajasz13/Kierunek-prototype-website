@@ -1,4 +1,4 @@
-import {changeSection} from './changeSection.js';
+import { changeSection } from './changeSection.js';
 
 let startY = 0;
 let endY = 0;
@@ -29,8 +29,6 @@ const onTouchEnd = (e) => {
 }
 
 const onScrollSections = (e) => {
-    e.prevetDefalt;
-
     const sections = document.querySelectorAll('.section');
     const current = document.querySelector('.active')
     if(!current) return;

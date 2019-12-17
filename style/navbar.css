@@ -36,3 +36,6 @@
     text-transform: uppercase;
     cursor: pointer;
 }
+.navbar .current{
+    text-decoration: underline;
+}

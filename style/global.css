@@ -4,6 +4,8 @@
     --complementary-color1: #CB6149;
     --complementary-color2: #DCA82E;
     --complementary-color3: #F2C671;
+    --sans-serif-font: 'Source Sans Pro', sans-serif;
+    --serif-font: 'Abhaya Libre', serif;
 }
 *{
     margin: 0;
@@ -16,8 +18,8 @@
 body .content-box .hidden{
     display: none;
 }
-p{
-    font-family: 'Abhaya Libre', serif;
+img{
+    width: 100%;
 }
 .button{
     background-color: var(--complementary-color1);
@@ -31,4 +33,16 @@ p{
 }
 .button:active{
     box-shadow: none;
+}
+.cytat.dark p{
+    text-shadow: -1px 0 var(--main-color2), 0 1px var(--main-color2), 1px 0 var(--main-color2), 0 -1px var(--main-color2);
+}
+.cytat.light p{
+    text-shadow: -1px 0 var(--main-color1), 0 1px var(--main-color1), 1px 0 var(--main-color1), 0 -1px var(--main-color1);
+}
+.cytat.dark .empty{
+    color: var(--main-color1)
+}
+.cytat.light .empty{
+    color: var(--main-color2)
 }
