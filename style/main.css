@@ -10,9 +10,12 @@
 .main .czas{
     font-size: 2rem;
 }
+.main .cytat div{
+    margin: 2%;
+}
 .main .cytat{
     font-size: 6rem;
 }
-.main .cytat div{
-    margin: 2%;
+.main .czas{
+    font-size: 2.5rem;
 }

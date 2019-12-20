@@ -1,17 +1,21 @@
 /* Navbar */
 .navbar{
+    font-size: 1.5rem;
     z-index: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 10vh;
+    height: 6vh;
     width: 100vw;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 700;
 }
-.navbar.dark, .navbar.light{
+.navbar.dark{
+    background: transparent;
+}
+.navbar.light{
     background: transparent;
 }
 .logo{
@@ -21,7 +25,6 @@
     align-items: center;
 }
 .logo-img{
-    width: 120px;
     height: auto;
     cursor: pointer;
     margin: 0 2%;
@@ -38,4 +41,30 @@
 }
 .navbar .current{
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 575px){
+    .logo-img{
+        width: 100px;
+    }
+}
+@media only screen and (min-width: 576px){
+    .logo-img{
+        width: 110px;
+    }
+}
+@media only screen and (min-width: 768px){
+    .logo-img{
+        width: 120px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .logo-img{
+        width: 130px;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .logo-img{
+        width: 150px;
+    }
 }

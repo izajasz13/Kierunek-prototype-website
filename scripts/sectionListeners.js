@@ -1,22 +1,27 @@
 import { changeSection } from './changeSection.js';
 
+const contentBox = document.querySelector(".content-box");
+const delay = 20;
+let timer;
 let startY = 0;
 let endY = 0;
+
 const onSwipe = () => {
     const sections = document.querySelectorAll('.section');
     const current = document.querySelector('.active')
     if(!current) return;
 
     let currentNumber = current.dataset.section;
-
-    if(startY / endY > 1.1){
-        if(currentNumber < 3){
-            changeSection(sections[currentNumber], sections[++currentNumber]);
+    if(contentBoxRect.right > 991){
+        if(startY / endY > 1.1){
+            if(currentNumber < 3){
+                changeSection(sections[currentNumber], sections[++currentNumber]);
+            }
         }
-    }
-    if(startY / endY < 0.90){
-        if(currentNumber > 0){
-            changeSection(sections[currentNumber], sections[--currentNumber]);
+        if(startY / endY < 0.90){
+            if(currentNumber > 0){
+                changeSection(sections[currentNumber], sections[--currentNumber]);
+            }
         }
     }
 }
@@ -34,15 +39,18 @@ const onScrollSections = (e) => {
     if(!current) return;
 
     let currentNumber = current.dataset.section;
+    const contentBoxRect = contentBox.getBoundingClientRect();
 
-    if(e.deltaY > 0){
-        if(currentNumber < 3){
-            changeSection(sections[currentNumber], sections[++currentNumber]);
+    if(contentBoxRect.right > 991){
+        if(e.deltaY > 0){
+            if(currentNumber < 3){
+                changeSection(sections[currentNumber], sections[++currentNumber]);
+            }
         }
-    }
-    if(e.deltaY < 0){
-        if(currentNumber > 0){
-            changeSection(sections[currentNumber], sections[--currentNumber]);
+        if(e.deltaY < 0){
+            if(currentNumber > 0){
+                changeSection(sections[currentNumber], sections[--currentNumber]);
+            }
         }
     }
 }

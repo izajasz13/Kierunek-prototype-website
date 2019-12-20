@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style/onas.css">
     <link rel="stylesheet" href="style/kontakt.css">
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Source+Sans+Pro:300,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/66ac371755.js" crossorigin="anonymous"></script>
     <title>Kierunek</title>
 </head>
 <body>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="more">
                         <div class="kto">
-                            U Krzysia Kacprowicza
+                            Grupa u Krzysia Kacprowicza
                         </div>
                         <div class="gdzie">
                             ul. Jastrzębia 11/5
@@ -66,7 +67,7 @@
                 </div>
                 <div class="grupa">
                     <div class="data">
-                        środy 17.30
+                        środy 17:30
                     </div>
                     <div class="more">
                         <div class="kto">
@@ -79,7 +80,7 @@
                 </div>
                 <div class="grupa">
                     <div class=data>
-                        środy 19.00
+                        środy 19:00
                     </div>
                     <div class="more">
                         <div class="kto">
@@ -92,7 +93,7 @@
                 </div>
                 <div class="grupa">
                     <div class="data">
-                        środy 18.30
+                        środy 18:30
                     </div>
                     <div class="more">
                         <div class="kto">
@@ -118,7 +119,7 @@
                 </div>
                 <div class="grupa">
                     <div class=data>
-                        piątki 18.00
+                        piątki 18:00
                     </div>
                     <div class="more">
                         <div class="kto">
@@ -131,7 +132,7 @@
                 </div>
                 <div class="grupa">
                     <div class=data>
-                        piątki 19.00
+                        piątki 19:00
                     </div>
                     <div class="more">
                         <div class="kto">
@@ -257,25 +258,34 @@
         <div class="kontakt section hidden" data-section="3">
             <div class="left pre-animate">
                 <div class="mapa">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10025.023991290735!2d17.0108173!3d51.0852829!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1574584286738!5m2!1spl!2spl" frameborder="0" allowfullscreen="" class="mapaframe"></iframe>
+                    <div class="mapframe"></div>
+                    <!-- <iframe class="mapframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5012.473288962989!2d17.01079584232856!3d51.085640089844446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1576674820527!5m2!1spl!2spl" allowfullscreen=""></iframe> -->
                 </div>
                 <div class="info">
-                    <span>Każda niedziela 11:00</span>
-                    <span>Kościół Kierunek</span>
-                    <span>Powstańców Śląskich 159,</span>
-                    <span>53-110 Wrocław</span>
+                    <div>
+                        <i class="fas fa-map-marked-alt"></i> 
+                        <div>Kościół Kierunek</div>
+                        <div>Powstańców Śląskich 159,</div>
+                        <div>53-110 Wrocław</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i> 
+                        <div>kierunek.info@gmail.com</div>
+                    </div>
                 </div>
             </div>
             <div class="right pre-animate">
                 <form name="kontakt" class="form" method="POST" data-netlify="true" enctype="application/x-www-form-urlencoded">
                     <input name="imie" class="imie" type="text" placeholder="imię">
-                    <input name="e-mail" class="email" type="text" placeholder="e-mail">
-                    <textarea name="wiadomosc" rows="4" cols="50" class="wiadomość" placeholder="wiadomość"></textarea>
+                    <input name="e-mail" class="email" type="email" placeholder="e-mail">
+                    <textarea name="wiadomosc" type="text" rows="4" cols="50" class="wiadomość" placeholder="wiadomość"></textarea>
                     <button type="submit" class="button button-contact">Wyślij!</button>
                 </form>
             </div>
         </div>
     </div>
     <script type="module" src="scripts/index.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGAh0xzK3FLruvh3QlSCNSkPSwLmfWrMw&callback=initMap&libraries=places" async defer></script>
 </body>
 </html>
