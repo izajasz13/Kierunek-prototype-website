@@ -1,5 +1,7 @@
 /* Kontakt */
 .kontakt .left{
+    color: #FFFFFF;
+    font-family: var(--sans-serif-font);
     flex-direction: column;
     align-items: flex-start;
 }
@@ -10,16 +12,16 @@
     justify-content: center;
 }
 .kontakt .info > *{
-    color: #FFFFFF;
-    font-family: var(--sans-serif-font);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     margin: 3% 0;
 }
+.kontakt .right{
+    flex-direction: column;
+}
 .kontakt form{
     width: 100%;
-    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,11 +29,11 @@
 }
 .kontakt input, .kontakt textarea{
     font-family: var(--serif-font);
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 20px;
     margin: 2%;
-    padding: 15px;
-    width: 400px;
+    padding: 2%;
+    width: 75%;
     height: 40px;
     border: none;
 }
@@ -47,10 +49,28 @@
     border-radius: 30px;
 }
 .kontakt .mapa{
+    margin: 2%;
     width: 80%;
-    height: 50%;
+    height: 450px;
 }
-.kontakt .mapaframe{
+.kontakt .mapframe{
     width: 100%;
     height: 100%;
+    border: 0;
+}
+@media only screen and (max-width: 991px){
+    .kontakt .left{
+        color: #FFFFFF;
+        font-family: var(--sans-serif-font);
+        flex-direction: column;
+        align-items: center;
+    }
+    .kontakt form{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
