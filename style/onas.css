@@ -56,3 +56,6 @@
 .onas .description > *{
     margin: 15px;
 }
+.onas .left{
+    font-family: var(--sans-serif-font);
+}

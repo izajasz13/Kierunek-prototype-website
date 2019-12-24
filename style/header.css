@@ -1,0 +1,202 @@
+/* Header */
+.header{
+    font-size: 1.5rem;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 6vh;
+    width: 100vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.header.dark{
+    background: transparent;
+}
+.header.light{
+    background: transparent;
+}
+.logo{
+    z-index: 3;
+    height: 100%;
+    width:50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logo-img{
+    height: auto;
+    cursor: pointer;
+    margin: 0 2%;
+}
+.header.dark .menu{
+    background-color: var(--main-color1);
+    text-shadow: -1px 0 var(--main-color2), 0 1px var(--main-color2), 1px 0 var(--main-color2), 0 -1px var(--main-color2);
+}
+.header.light .menu{
+    background-color: var(--main-color2);
+    text-shadow: -1px 0 var(--main-color1), 0 1px var(--main-color1), 1px 0 var(--main-color1), 0 -1px var(--main-color1);
+}
+.header.dark .current{
+    color: var(--main-color1);
+}
+.header.light .current{
+    color: var(--main-color2);
+}
+.menu{
+    top: -100vh;
+    right: -100vw;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: all 1s ease-out;
+    box-shadow: 0px 15px 12px rgba(0, 0, 0, 0.22), 0px 19px 38px rgba(0, 0, 0, 0.3);
+}
+.menu-list{
+    position: relative;
+    margin: 0 1rem;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.menu .item{
+    position: relative;
+    font-size: 4rem;
+    margin: 3rem 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.menu .item.pre-animate{
+    right: -100vw;
+}
+.menu .item.animate{
+    animation: slide-in .5s ease-out;
+}
+.menu.open{
+    display: flex;
+    right: 0;
+    top: 0;
+    border-radius: initial;
+}
+
+/* Burger */
+.menu-toggler-container{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.menu-toggler{
+    margin: 0 2%;
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 1s ease-out;
+}
+.menu-toggler.open{
+    transform: rotate(45deg);
+}
+.header.dark .cross{
+    background: var(--main-color2);
+    animation: pulse-light 2s infinite;
+}
+.header.light .cross{
+    background: var(--main-color1);
+    animation: pulse-dark 2s infinite;
+}
+.cross{
+    width: 100%;
+    height: 3px;
+    border-radius: .4rem;
+}
+.cross.half{
+    width: 50%;
+}
+.cross.start{
+    transform-origin: right;
+    transition: transform 1s cubic-bezier(0.54, -0.81, 0.57, 0.57)
+}
+.open .cross.start{
+    transform: rotate(450deg) translateX(.8rem);
+}
+.cross.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.54, -0.81, 0.57, 0.57)
+}
+.open .cross.end{
+    transform: rotate(450deg) translateX(-.8rem);
+}
+
+/* Animations */
+@keyframes pulse-dark{
+    0%{
+        box-shadow: 0 0 0 0 rgba(18, 67, 39, 0.9);
+    }
+    70%{
+        box-shadow: 0 0 0 .3rem rgba(18, 67, 39, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(18, 67, 39, 0);
+    }
+}
+@keyframes pulse-light{
+    0%{
+        box-shadow: 0 0 0 0 rgba(234, 197, 177, 0.9);
+    }
+    70%{
+        box-shadow: 0 0 0 .3rem rgba(234, 197, 177, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(234, 197, 177, 0);
+    }
+}
+@keyframes slide-in{
+    0%{
+        right: -100vw;
+    }
+    100%{
+        right: 0;
+    }
+}
+
+/* Resposivness */
+@media only screen and (max-width: 575px){
+    .logo-img{
+        width: 100px;
+    }
+}
+@media only screen and (min-width: 576px){
+    .logo-img{
+        width: 110px;
+    }
+}
+@media only screen and (min-width: 768px){
+    .logo-img{
+        width: 120px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .logo-img{
+        width: 130px;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .logo-img{
+        width: 150px;
+    }
+}

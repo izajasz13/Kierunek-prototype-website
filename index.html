@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/slider.css">
-    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/sections.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/grupy.css">
@@ -18,25 +18,34 @@
 </head>
 <body>
     <div class="content-box">
-        <nav class="navbar dark">
+        <header class="header dark">
             <div class="logo">
                 <img src="img/kierunek_light.png" alt="Kierunek" class="logo-img">
             </div>
-            <div class="menu">
-                <div class="item current" data-item="0">
-                    Strona główna
-                </div>
-                <div class="item" data-item="1">
-                    Grupy domowe
-                </div>
-                <div class="item" data-item="2">
-                    Poznaj nas
-                </div>
-                <div class="item" data-item="3">
-                    Kontakt
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li class="item pre-animate current" data-item="0">
+                        Strona główna
+                    </li>
+                    <li class="item pre-animate" data-item="1">
+                        Grupy domowe
+                    </li>
+                    <li class="item pre-animate" data-item="2">
+                        Poznaj nas
+                    </li>
+                    <li class="item pre-animate" data-item="3">
+                        Kontakt
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-toggler-container">
+                <div class="menu-toggler">
+                    <div class="cross half start"></div>
+                    <div class="cross"></div>
+                    <div class="cross half end"></div>
                 </div>
             </div>
-        </nav>
+        </header>
         <div class="main section dark active" data-section="0">
             <div class="left pre-animate">
                 <div class="slider"></div>
@@ -258,8 +267,8 @@
         <div class="kontakt section hidden" data-section="3">
             <div class="left pre-animate">
                 <div class="mapa">
-                    <div class="mapframe"></div>
-                    <!-- <iframe class="mapframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5012.473288962989!2d17.01079584232856!3d51.085640089844446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1576674820527!5m2!1spl!2spl" allowfullscreen=""></iframe> -->
+                    <!-- <div class="mapframe"></div> -->
+                    <iframe class="mapframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5012.473288962989!2d17.01079584232856!3d51.085640089844446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1576674820527!5m2!1spl!2spl" allowfullscreen=""></iframe>
                 </div>
                 <div class="info">
                     <div>

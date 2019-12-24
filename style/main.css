@@ -19,3 +19,9 @@
 .main .czas{
     font-size: 2.5rem;
 }
+.main .cytat.dark p{
+    text-shadow: -1px 0 var(--main-color2), 0 1px var(--main-color2), 1px 0 var(--main-color2), 0 -1px var(--main-color2);
+}
+.main .cytat.light p{
+    text-shadow: -1px 0 var(--main-color1), 0 1px var(--main-color1), 1px 0 var(--main-color1), 0 -1px var(--main-color1);
+}

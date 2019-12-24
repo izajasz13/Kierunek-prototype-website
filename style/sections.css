@@ -47,13 +47,13 @@
     transform: translateX(-1500px);
 }
 .left.animate{
-    animation: slideLeft 2s ease-out;
+    animation: slideLeft 1s ease-out;
 }
 .right.pre-animate{
     transform: translateX(1500px);
 }
 .right.animate{
-    animation: slideRight 2s ease-out;
+    animation: slideRight 1s ease-out;
 }
 
 /* Animations */
@@ -81,7 +81,7 @@
 
 @media only screen and (max-width: 991px){
     .section{
-        padding-top: 6%;
+        padding-top: 10%;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;

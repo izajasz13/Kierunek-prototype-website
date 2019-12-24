@@ -2,19 +2,19 @@ import { attachSectionListeners, removeSectionListeners } from './sectionListene
 import { generateMainSlider, generateGrupySlider } from './slider.js';
 import { resetService } from './changeService.js';
 
-export const changeSection = (current, next) => {
+export const changeSection = (current, next, animation) => {
     removeSectionListeners();
     handleNavbar(current, next);
-    const nav = document.querySelector('.navbar');
+    const nav = document.querySelector('.header');
+    const menu = document.querySelector('.menu');
     const isDark = current.classList.contains('dark')
     if(isDark){
         nav.classList.remove('dark');
         nav.classList.add('light');
         next.classList.add('light');
-        if(next.classList.contains('onas') || next.classList.contains("main")){
+        if(next.classList.contains('onas') || next.classList.contains('main')){
             const quote = next.querySelector('.cytat');
-            quote.classList.add("light");
-            const time = next.querySelector('.czas');
+            quote.classList.add('light');
         }
         document.querySelector('.logo-img').src = "img/kierunek_dark.png";
     }else{
@@ -27,23 +27,10 @@ export const changeSection = (current, next) => {
         }
         document.querySelector('.logo-img').src = "img/kierunek_light.png";
     }
-    next.classList.add('animate');
+    if(animation) next.classList.add('animate');
     next.classList.remove('hidden');
     const sectionAnimationEnd = (e) => {
-        if(isDark){ 
-            current.classList.remove('dark');
-            if(current.classList.contains('onas') || current.classList.contains("main")){
-                const quote = current.querySelector('.cytat');
-                quote.classList.remove("dark");
-            }
-        }
-        else{
-            current.classList.remove('light');
-            if(current.classList.contains('onas') || current.classList.contains("main")){
-                const quote = current.querySelector('.cytat');
-                quote.classList.remove("light");
-            }
-        }
+        handleBorderText(current, isDark);
         current.classList.remove('active')
         current.classList.add('hidden');
         next.classList.add('active');
@@ -52,8 +39,21 @@ export const changeSection = (current, next) => {
         next.removeEventListener('animationend', sectionAnimationEnd)
         animateLeftAndRight(current, next)
     }
-    
-    next.addEventListener('animationend', sectionAnimationEnd)
+    const menuAnimationEnd = (e) => {
+        animateLeftAndRight(current, next);
+        menu.removeEventListener('transitionend', menuAnimationEnd);
+    }
+    if(animation){
+        next.addEventListener('animationend', sectionAnimationEnd)
+    }
+    else{
+        handleBorderText(current, isDark)
+        current.classList.remove('active')
+        current.classList.add('hidden');
+        next.classList.add('active');
+        attachSectionListeners();
+        menu.addEventListener('transitionend', menuAnimationEnd);
+    }
 }
 
 const animateLeftAndRight = (current, next) => {
@@ -102,6 +102,23 @@ export const handleNewSection = (next) => {
 
     left.addEventListener('animationend', sidePanelAnimationEnd);
     right.addEventListener('animationend', sidePanelAnimationEnd);
+}
+
+const handleBorderText = (current, isDark) => {
+    if(isDark){ 
+        current.classList.remove('dark');
+        if(current.classList.contains('onas') || current.classList.contains("main")){
+            const quote = current.querySelector('.cytat');
+            quote.classList.remove("dark");
+        }
+    }
+    else{
+        current.classList.remove('light');
+        if(current.classList.contains('onas') || current.classList.contains("main")){
+            const quote = current.querySelector('.cytat');
+            quote.classList.remove("light");
+        }
+    }
 }
 
 const sidePanelAnimationEnd = (e) => {
