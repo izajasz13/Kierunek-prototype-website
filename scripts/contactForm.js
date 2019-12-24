@@ -16,6 +16,6 @@ const onSubmit = (e) => {
 }
 
 export const attachContactListeners = () => {
-    const button = document.querySelector(".button-contact");
+    const button = document.querySelector(".kontakt .button");
     button.addEventListener('click', onSubmit)
 }
