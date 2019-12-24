@@ -1,4 +1,5 @@
 import { changeSection } from './changeSection.js';
+import { onListClose } from './changeService.js';
 
 const contentBox = document.querySelector(".content-box");
 const menu = document.querySelector('.menu-toggler');
@@ -86,6 +87,9 @@ const onLogoClick = (e) => {
 
 const onBurgerClick = (e) => {
     const menu = document.querySelector('.menu');
+    if(document.querySelector('.section.active').classList.contains('onas')){
+        onListClose();
+    }
     if(menu.classList.contains('open')){
         onNavbarClose();
     }
