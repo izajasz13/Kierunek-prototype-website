@@ -1,26 +1,29 @@
 import { changeSection } from './changeSection.js';
 
 const contentBox = document.querySelector(".content-box");
-const delay = 20;
-let timer;
+const menu = document.querySelector('.menu-toggler');
 let startY = 0;
 let endY = 0;
 
 const onSwipe = () => {
-    const sections = document.querySelectorAll('.section');
-    const current = document.querySelector('.active')
-    if(!current) return;
+    if(!menu.classList.contains('open')){
+        const sections = document.querySelectorAll('.section');
+        const current = document.querySelector('.active')
+        if(!current) return;
 
-    let currentNumber = current.dataset.section;
-    if(contentBoxRect.right > 991){
-        if(startY / endY > 1.1){
-            if(currentNumber < 3){
-                changeSection(sections[currentNumber], sections[++currentNumber]);
+        let currentNumber = current.dataset.section;
+        const contentBoxRect = contentBox.getBoundingClientRect();
+
+        if(contentBoxRect.right > 991){
+            if(startY / endY > 1.1){
+                if(currentNumber < 3){
+                    changeSection(sections[currentNumber], sections[++currentNumber], true);
+                }
             }
-        }
-        if(startY / endY < 0.90){
-            if(currentNumber > 0){
-                changeSection(sections[currentNumber], sections[--currentNumber]);
+            if(startY / endY < 0.90){
+                if(currentNumber > 0){
+                    changeSection(sections[currentNumber], sections[--currentNumber], true);
+                }
             }
         }
     }
@@ -34,22 +37,24 @@ const onTouchEnd = (e) => {
 }
 
 const onScrollSections = (e) => {
-    const sections = document.querySelectorAll('.section');
-    const current = document.querySelector('.active')
-    if(!current) return;
+    if(!menu.classList.contains('open')){
+        const sections = document.querySelectorAll('.section');
+        const current = document.querySelector('.active')
+        if(!current) return;
 
-    let currentNumber = current.dataset.section;
-    const contentBoxRect = contentBox.getBoundingClientRect();
+        let currentNumber = current.dataset.section;
+        const contentBoxRect = contentBox.getBoundingClientRect();
 
-    if(contentBoxRect.right > 991){
-        if(e.deltaY > 0){
-            if(currentNumber < 3){
-                changeSection(sections[currentNumber], sections[++currentNumber]);
+        if(contentBoxRect.right > 991){
+            if(e.deltaY > 0){
+                if(currentNumber < 3){
+                    changeSection(sections[currentNumber], sections[++currentNumber], true);
+                }
             }
-        }
-        if(e.deltaY < 0){
-            if(currentNumber > 0){
-                changeSection(sections[currentNumber], sections[--currentNumber]);
+            if(e.deltaY < 0){
+                if(currentNumber > 0){
+                    changeSection(sections[currentNumber], sections[--currentNumber], true);
+                }
             }
         }
     }
@@ -63,22 +68,58 @@ const onClickMenuItem = (e) => {
     const newSection = document.querySelector(`[data-section="${selectedNumber}"]`);
     if(currentSection === newSection) return;
 
-    changeSection(currentSection, newSection);
+    onNavbarClose();
+
+    changeSection(currentSection, newSection, false);
 }
 
 const onLogoClick = (e) => {
-    const currentSection = document.querySelector('.active');
-    if(!currentSection) return;
-;
-    const newSection = document.querySelector(`[data-section="0"]`);
-    if(currentSection === newSection) return;
+    if(!menu.classList.contains('open')){
+        const currentSection = document.querySelector('.active');
+        if(!currentSection) return;
+        const newSection = document.querySelector(`[data-section="0"]`);
+        if(currentSection === newSection) return;
 
-    changeSection(currentSection, newSection);
+        changeSection(currentSection, newSection, true);
+    }
+}
+
+const onBurgerClick = (e) => {
+    const menu = document.querySelector('.menu');
+    if(menu.classList.contains('open')){
+        onNavbarClose();
+    }
+    else{
+        onNavbarOpen();
+    }
+}
+
+const onNavbarOpen = () => {
+    document.querySelector(".menu-toggler").classList.add('open');
+    document.querySelector('.menu').classList.add('open');
+        const animateItems = (e) => {
+            menuItems.forEach((item, i) => {
+                setTimeout(() => {
+                    item.classList.add('animate');
+                    item.classList.remove('pre-animate');
+                }, i * 100)
+            })
+            menu.removeEventListener('transitionend', animateItems)
+        }
+        menu.addEventListener('transitionend', animateItems)
+}
+const onNavbarClose = () => {
+    document.querySelector(".menu-toggler").classList.remove('open');
+    document.querySelector('.menu').classList.remove('open');
+    menuItems.forEach((item) => item.classList.remove('animate'));
+    menuItems.forEach((item) => item.classList.add('pre-animate'));
 }
 
 const menuItems = document.querySelectorAll('.item');
+const burger = document.querySelector('.menu-toggler');
 const logo = document.querySelector('div.logo')
 export const attachSectionListeners = () => {
+    burger.addEventListener('click', onBurgerClick);
     window.addEventListener('touchstart', onTouchStart);
     window.addEventListener('touchend', onTouchEnd);
     window.addEventListener('wheel', onScrollSections);
@@ -87,6 +128,7 @@ export const attachSectionListeners = () => {
 }
 
 export const removeSectionListeners = () => {
+    burger.removeEventListener('click', onBurgerClick);
     window.removeEventListener('touchstart', onTouchStart);
     window.removeEventListener('touchend', onTouchEnd);
     window.removeEventListener('wheel', onScrollSections);
