@@ -10,8 +10,6 @@ const moreInfoOpen = (infoTag) => {
     const infoDiv = document.querySelector(`.${infoTag}`);
     const left = document.querySelector('.main .left');
     const right = document.querySelector('.main .right');
-    left.classList.add('hidden');
-    right.classList.add('hidden');
     infoDiv.classList.add('open');
     const button = infoDiv.querySelector('.close-button');
     const closeFunction = () => {
@@ -19,6 +17,12 @@ const moreInfoOpen = (infoTag) => {
         button.removeEventListener('click', closeFunction);
     }
     button.addEventListener('click', closeFunction);
+    const onTransitionEnd = () => {
+        left.classList.add('hidden');
+        right.classList.add('hidden');
+        infoDiv.removeEventListener('transitionend', onTransitionEnd);
+    }
+    infoDiv.addEventListener('transitionend', onTransitionEnd);
 }
 
 export const moreInfoClose = (infoTag) => {
