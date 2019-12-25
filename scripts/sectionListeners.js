@@ -1,5 +1,6 @@
 import { changeSection } from './changeSection.js';
 import { onListClose } from './changeService.js';
+import { isMoreInfoOpen, moreInfoClose } from './sliderClick.js';
 
 const contentBox = document.querySelector(".content-box");
 const menu = document.querySelector('.menu-toggler');
@@ -7,7 +8,7 @@ let startY = 0;
 let endY = 0;
 
 const onSwipe = () => {
-    if(!menu.classList.contains('open')){
+    if(!menu.classList.contains('open') && !isMoreInfoOpen()){
         const sections = document.querySelectorAll('.section');
         const current = document.querySelector('.active')
         if(!current) return;
@@ -38,7 +39,7 @@ const onTouchEnd = (e) => {
 }
 
 const onScrollSections = (e) => {
-    if(!menu.classList.contains('open')){
+    if(!menu.classList.contains('open') && !isMoreInfoOpen()){
         const sections = document.querySelectorAll('.section');
         const current = document.querySelector('.active')
         if(!current) return;
@@ -82,11 +83,16 @@ const onLogoClick = (e) => {
         if(currentSection === newSection) return;
 
         changeSection(currentSection, newSection, true);
+        onListClose();
     }
 }
 
 const onBurgerClick = (e) => {
     const menu = document.querySelector('.menu');
+    const moreInfo = isMoreInfoOpen();
+    if(moreInfo){
+        moreInfoClose(moreInfo);
+    }
     if(document.querySelector('.section.active').classList.contains('onas')){
         onListClose();
     }

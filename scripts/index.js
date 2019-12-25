@@ -7,4 +7,4 @@ attachSectionListeners();
 attachServiceListeners();
 attachContactListeners();
 const start = document.querySelector(".main");
-handleNewSection(start)
+handleNewSection(start);

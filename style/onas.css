@@ -11,6 +11,7 @@
     cursor: pointer;
 }
 .onas .more{
+    height: 100%;
     width: 75%;
     display: flex;
     justify-content: center;
@@ -53,12 +54,8 @@
     width: auto;
     overflow: hidden;
 }
-.onas .description > *{
-    margin: 15px;
-}
 .onas .left{
     font-family: var(--sans-serif-font);
-
 }
 .onas .list{
     height: 100%;
@@ -71,7 +68,7 @@
 .onas .button{
     position: fixed;
     z-index: 3;
-    bottom: 1rem;
+    bottom: 2rem;
     left: 1rem;
     border-radius: 100%;
     width: 3rem;
@@ -102,28 +99,6 @@
 }
 
 /* Animations */
-@keyframes button-pulse-dark{
-    0%{
-        box-shadow: 0 0 0 0 rgba(18, 67, 39, 0.9);
-    }
-    70%{
-        box-shadow: 0 0 0 1rem rgba(18, 67, 39, 0);
-    }
-    100%{
-        box-shadow: 0 0 0 0 rgba(18, 67, 39, 0);
-    }
-}
-@keyframes button-pulse-light{
-    0%{
-        box-shadow: 0 0 0 0 rgba(234, 197, 177, 0.9);
-    }
-    70%{
-        box-shadow: 0 0 0 1rem rgba(234, 197, 177, 0);
-    }
-    100%{
-        box-shadow: 0 0 0 0 rgba(234, 197, 177, 0);
-    }
-}
 @keyframes list-slide-in{
     0%{
         left: -100vw;
@@ -145,6 +120,14 @@
         width: 100%;
         height: 0%;
         order: 2;
+    }
+    .onas .right{
+        width: 100%;
+        height: 100%;
+        order: 1;
+    }
+    .onas .left, .onas .right{
+        padding: 0 3%;
     }
     .onas .list{
         position: fixed;
@@ -170,18 +153,13 @@
     }
     .onas .sluzba{
         position: relative;
-        margin: 2%;
+        margin: 1%;
     }
     .onas .sluzba.pre-animate{
         left: -100vw;
     }
     .onas .sluzba.animate{
         animation: list-slide-in .5s ease-out;
-    }
-    .onas .right{
-        width: 100%;
-        height: 100%;
-        order: 1;
     }
     .onas .button{
         justify-self: flex-start;
