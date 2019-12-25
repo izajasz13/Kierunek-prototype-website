@@ -179,10 +179,10 @@
     .logo-img{
         width: 100px;
     }
-    .header.light .menu{
+    .header.dark .menu{
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
-    .header.dark .menu{
+    .header.light .menu{
         text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
@@ -190,10 +190,10 @@
     .logo-img{
         width: 110px;
     }
-    .header.light .menu{
+    .header.dark .menu{
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
-    .header.dark .menu{
+    .header.light .menu{
         text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
