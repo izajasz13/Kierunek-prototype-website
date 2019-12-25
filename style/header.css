@@ -179,7 +179,7 @@
     .logo-img{
         width: 100px;
     }
-    .header.dark .menu{
+    .header.light .menu{
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
     .header.dark .menu{
@@ -190,7 +190,7 @@
     .logo-img{
         width: 110px;
     }
-    .header.dark .menu{
+    .header.light .menu{
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
     .header.dark .menu{
