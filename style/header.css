@@ -179,10 +179,22 @@
     .logo-img{
         width: 100px;
     }
+    .header.dark .menu{
+        text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
+    }
+    .header.dark .menu{
+        text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
+    }
 }
 @media only screen and (min-width: 576px){
     .logo-img{
         width: 110px;
+    }
+    .header.dark .menu{
+        text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
+    }
+    .header.dark .menu{
+        text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
 @media only screen and (min-width: 768px){
