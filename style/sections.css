@@ -38,7 +38,6 @@
     position: relative;
     padding: 3%;
     width: 50%;
-    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,17 +80,24 @@
 
 @media only screen and (max-width: 991px){
     .section{
-        padding-top: 10%;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
     }
     .left, .right{
         width: 100%;
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+    .left{
+        padding-top: 6%;
     }
 }
 @media only screen and (min-width: 992px){
     .section.active{
         height: 100%;
+    }
+    .left, .right{
+        height: 94%;
     }
 }

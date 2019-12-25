@@ -1,6 +1,7 @@
 import { attachSectionListeners, removeSectionListeners } from './sectionListeners.js';
 import { generateMainSlider, generateGrupySlider } from './slider.js';
 import { resetService } from './changeService.js';
+import { isMoreInfoOpen, moreInfoClose } from './sliderClick.js';
 
 export const changeSection = (current, next, animation) => {
     removeSectionListeners();
@@ -79,6 +80,12 @@ const handleCurrentSection = (current) => {
         slider.innerHTML = "";
         slider.classList.remove(...slider.classList);
         slider.classList.add("slider");
+    }
+    if(current.classList.contains("main")){
+        const moreInfo = isMoreInfoOpen();
+        if(moreInfo){
+            moreInfoClose(moreInfo);
+        }
     }
     const oldLeft = current.querySelector(".left")
     const oldRight = current.querySelector(".right")
