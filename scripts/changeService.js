@@ -50,4 +50,4 @@ export const resetService = () => {
     currentService = '.cytat';
 }
 
-listToggler.addEventListener('click', onListTogglerClick)
+listToggler.addEventListener('click', onListTogglerClick);

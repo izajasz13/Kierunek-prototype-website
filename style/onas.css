@@ -7,7 +7,8 @@
     justify-content: space-between;
 }
 .onas .sluzba{
-    font-size: 1.8rem;
+    font-weight: 700;
+    font-size: 2rem;
     cursor: pointer;
 }
 .onas .more{
@@ -109,12 +110,12 @@
 }
 
 /* Resposivness */
-@media only screen and (min-width: 991px){
+@media only screen and (min-width: 992px){
     .onas .button{
         display: none;
     }
 }
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 991px){
     .onas .left{
         position: relative;
         width: 100%;
@@ -163,5 +164,11 @@
     }
     .onas .button{
         justify-self: flex-start;
+    }
+    .onas .cytat.dark p{
+        text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
+    }
+    .onas .cytat.light p{
+        text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
