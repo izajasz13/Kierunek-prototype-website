@@ -8,7 +8,7 @@ const onListItemClick = (e) =>{
     document.querySelector('.onas ' + currentService).classList.add('hidden');
     document.querySelector('.onas ' + which).classList.remove('hidden');
     currentService = which;
-    list.classList.remove('open');
+    onListClose();
 }
 
 const onListTogglerClick = (e) => {
