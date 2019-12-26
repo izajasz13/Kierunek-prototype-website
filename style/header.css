@@ -31,14 +31,6 @@
     cursor: pointer;
     margin: 0 2%;
 }
-.header.dark .menu{
-    background-color: var(--main-color1);
-    text-shadow: -1px 0 var(--main-color2), 0 1px var(--main-color2), 1px 0 var(--main-color2), 0 -1px var(--main-color2);
-}
-.header.light .menu{
-    background-color: var(--main-color2);
-    text-shadow: -1px 0 var(--main-color1), 0 1px var(--main-color1), 1px 0 var(--main-color1), 0 -1px var(--main-color1);
-}
 .header.dark .current{
     color: var(--main-color1);
 }
@@ -180,9 +172,11 @@
         width: 100px;
     }
     .header.dark .menu{
+        background-color: var(--main-color1);
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
     .header.light .menu{
+        background-color: var(--main-color2);
         text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
@@ -191,9 +185,11 @@
         width: 110px;
     }
     .header.dark .menu{
+        background-color: var(--main-color1);
         text-shadow: -.5px 0 var(--main-color2), 0 .5px var(--main-color2), .5px 0 var(--main-color2), 0 -.5px var(--main-color2);
     }
     .header.light .menu{
+        background-color: var(--main-color2);
         text-shadow: -.5px 0 var(--main-color1), 0 .5px var(--main-color1), .5px 0 var(--main-color1), 0 -.5px var(--main-color1);
     }
 }
@@ -205,6 +201,14 @@
 @media only screen and (min-width: 992px){
     .logo-img{
         width: 130px;
+    }
+    .header.dark .menu{
+        background-color: var(--main-color1);
+        text-shadow: -1px 0 var(--main-color2), 0 1px var(--main-color2), 1px 0 var(--main-color2), 0 -1px var(--main-color2);
+    }
+    .header.light .menu{
+        background-color: var(--main-color2);
+        text-shadow: -1px 0 var(--main-color1), 0 1px var(--main-color1), 1px 0 var(--main-color1), 0 -1px var(--main-color1);
     }
 }
 @media only screen and (min-width: 1200px){
