@@ -60,7 +60,17 @@ img{
 .cytat.light .empty{
     color: var(--main-color2)
 }
-
+.submitForm{
+    animation: slideOut 1.5s ease-in-out;
+}
+@keyframes slideOut{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-1000px);
+    }
+}
 @keyframes button-pulse-dark{
     0%{
         box-shadow: 0 0 0 0 rgba(18, 67, 39, 0.9);
