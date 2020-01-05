@@ -16,7 +16,7 @@ const onSubmit = async (e) => {
     };
 
     try {
-        const data = await postData('http://localhost:3000/contact', obj);
+        const data = await postData('https://intense-meadow-03245.herokuapp.com/contact', obj);
         form.classList.add("submitForm");
         form.addEventListener('animationend', e => {
             e.currentTarget.classList.remove("submitForm")
@@ -26,7 +26,7 @@ const onSubmit = async (e) => {
         });
     }
     catch (error) {
-        console.error(error, 'abc');
+        console.error(error);
     }
 }
 
@@ -44,7 +44,6 @@ async function postData(url = '', data = {}) {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
     });
-    console.log(data);
     return await response;
 }
 

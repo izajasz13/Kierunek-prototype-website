@@ -43,7 +43,7 @@
 .kontakt .button{
     border: none;
     margin: 2%;
-    background-color: var(--main-color1);
+    background-color: var(--complementary-color1);
     color: #FFFFFF;
     width: 250px;
     border-radius: 30px;
