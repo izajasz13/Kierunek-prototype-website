@@ -30,7 +30,7 @@ const onSubmit = async (e) => {
     }
 }
 
-async function postData(url = '', data = {}) {
+export async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
