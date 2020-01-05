@@ -1,3 +1,4 @@
+import {postData} from './contactForm.js';
 let moreInfo = '';
 
 const onSliderIconClick = (e) => {
@@ -50,7 +51,7 @@ const onNartyClick = async (e) => {
         form.addEventListener('animationend', e => {
             e.currentTarget.classList.remove("submitForm")
             imieInput.value = '';
-            nazwiskoInput = '';
+            nazwiskoInput.value = '';
             emailInput.value = '';
             numerInput.value = '';
         });
@@ -58,11 +59,10 @@ const onNartyClick = async (e) => {
     catch (error) {
         console.error(error);
     }
-
-    send(form);
 }
 
-const nartButton = document.querySelector('.narty-button');
+const nartButton = document.querySelector('.button-narty');
+nartButton.addEventListener('click', onNartyClick);
 
 
 export const moreInfoClose = (infoTag) => {
