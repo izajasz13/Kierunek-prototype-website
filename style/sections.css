@@ -22,7 +22,7 @@
 }
 .section.animate{
     z-index: 2;
-    animation: sectionChange 2.5s ease-in-out;
+    animation: sectionChange 1.5s ease-in;
 }
 .dark{
     background-color: var(--main-color1);
@@ -46,13 +46,13 @@
     transform: translateX(-1500px);
 }
 .left.animate{
-    animation: slideLeft 1s ease-out;
+    animation: slideLeft .8s ease-out;
 }
 .right.pre-animate{
     transform: translateX(1500px);
 }
 .right.animate{
-    animation: slideRight 1s ease-out;
+    animation: slideRight .8s ease-out;
 }
 
 /* Animations */
@@ -91,6 +91,16 @@
     }
     .left{
         padding-top: 9%;
+    }
+    .section.animate{
+        z-index: 2;
+        animation: sectionChange .8s ease-in;
+    }
+    .left.animate{
+        animation: slideLeft .6s ease-out;
+    }
+    .right.animate{
+        animation: slideRight .6s ease-out;
     }
 }
 @media only screen and (min-width: 992px){

@@ -138,7 +138,7 @@
         bottom: -100vh;
         left: -100vw;
         border-radius: 100%;
-        transition: all 1s ease-out;
+        transition: all .5s ease-out;
         box-shadow: 0px 15px 12px rgba(0, 0, 0, 0.22), 0px 19px 38px rgba(0, 0, 0, 0.3);
     }
     .onas.dark .list{
@@ -160,7 +160,7 @@
         left: -100vw;
     }
     .onas .sluzba.animate{
-        animation: list-slide-in .5s ease-out;
+        animation: list-slide-in .25s ease-out;
     }
     .onas .button{
         justify-self: flex-start;

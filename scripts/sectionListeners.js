@@ -4,6 +4,7 @@ import { isMoreInfoOpen, moreInfoClose } from './sliderClick.js';
 
 const contentBox = document.querySelector(".content-box");
 const menu = document.querySelector('.menu-toggler');
+const scrollInfo = document.querySelector('.scroll-info');
 let startY = 0;
 let endY = 0;
 
@@ -43,6 +44,9 @@ const onScrollSections = (e) => {
         const sections = document.querySelectorAll('.section');
         const current = document.querySelector('.active')
         if(!current) return;
+
+        if(!scrollInfo.classList.contains('hidden')) 
+            scrollInfo.classList.add('hidden');
 
         let currentNumber = current.dataset.section;
         const contentBoxRect = contentBox.getBoundingClientRect();

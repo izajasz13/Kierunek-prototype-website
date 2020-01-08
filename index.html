@@ -23,6 +23,10 @@
 </head>
 <body>
     <div class="content-box">
+        <div class="scroll-info">
+            <img src="img/icons/scroll.png" alt="">
+            <div>Użyj kółka myski by poruszać się między sekcjami</div>
+        </div>
         <header class="header dark">
             <div class="logo">
                 <img src="img/kierunek_light.png" alt="Kierunek" class="logo-img">
@@ -261,47 +265,47 @@
                     <div class="description uwielbienie hidden">
                         <h2>Uwielbienie</h2>
                         <img src="img/liderzy/Tymek Kozłowski.JPG" alt="">
-                        <div>Lider: Tymoteusz Kozłowski</div>
+                        <div>Osoba odpowiedzialna: Tymoteusz Kozłowski</div>
                     </div>
                     <div class="description welcome hidden">
                         <h2>Welcome team</h2>
                         <img src="img/liderzy/Marcela Chyba.JPG" alt="">
-                        <div>Lider: Marcela Chyba</div>
+                        <div>Osoba odpowiedzialna: Marcela Chyba</div>
                     </div>
                     <div class="description media hidden">
                         <h2>Media team</h2>
                         <img src="img/liderzy/Natasza Baran.JPG" alt="">
-                        <div>Lider: Natasza Baran</div>
+                        <div>Osoba odpowiedzialna: Natasza Baran</div>
                     </div>
                     <div class="description set hidden">
                         <h2>Set-up & set-down</h2>
                         <img src="img/liderzy/Artur Maniak.JPG" alt="">
-                        <div>Lider: Artur Maniak</div>
+                        <div>Osoba odpowiedzialna: Artur Maniak</div>
                     </div>
                     <div class="description kawiarenka hidden">
                         <h2>Kawiarenka</h2>
                         <img src="img/liderzy/Nadia Herzog.JPG" alt="">
-                        <div>Lider: Nadia Herzog</div>
+                        <div>Osoba odpowiedzialna: Nadia Herzog</div>
                     </div>
                     <div class="description kids hidden">
                         <h2>Kids zone</h2>
                         <img src="img/liderzy/Danusia Tomczyńska.JPG" alt="">
-                        <div>Lider: Danuta Tomczyńska</div>
+                        <div>Osoba odpowiedzialna: Danuta Tomczyńska</div>
                     </div>
                     <div class="description tlumaczenia hidden">
                         <h2>Tłumaczenia</h2>
                         <img src="img/liderzy/Piotr Gruszczyński.JPG" alt="">
-                        <div>Lider: Piotr Gruszczyński</div>
+                        <div>Osoba odpowiedzialna: Piotr Gruszczyński</div>
                     </div>
                     <div class="description produkcja hidden">
                         <h2>Produkcja</h2>
                         <img src="img/liderzy/Franek Przewoźny.JPG" alt="">
-                        <div>Lider: Franek Przewoźny</div>
+                        <div>Osoba odpowiedzialna: Franek Przewoźny</div>
                     </div>
                     <div class="description creative hidden">
                         <h2>Creative team</h2>
                         <img src="img/liderzy/Marcela Chyba.JPG" alt="">
-                        <div>Lider: Marcela Chyba</div>
+                        <div>Osoba odpowiedzialna: Marcela Chyba</div>
                     </div>
                 </div>
             </div>
@@ -309,7 +313,6 @@
         <div class="kontakt section hidden" data-section="3">
             <div class="left pre-animate">
                 <div class="mapa">
-                    <!-- <div class="mapframe"></div> -->
                     <iframe class="mapframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5012.473288962989!2d17.01079584232856!3d51.085640089844446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dd3e0c057362d0e!2zS2_Fm2Npw7PFgiBLaWVydW5law!5e0!3m2!1spl!2spl!4v1576674820527!5m2!1spl!2spl" allowfullscreen=""></iframe>
                 </div>
                 <div class="info">
@@ -320,12 +323,19 @@
                         <div>53-110 Wrocław</div>
                     </div>
                     <div>
+                        <i class="fas fa-landmark"></i>
+                        <div>KOŚCIÓŁ ZIELONOŚWIĄTKOWY ZBÓR "KIERUNEK" WE WROCŁAWIU</div>
+                        <div>UŁAŃSKA 5, 52-213 WROCŁAW</div>
+                        <div>31 1090 2590 0000 0001 3939 1058</div>
+                    </div>
+                    <div>
                         <i class="fas fa-envelope"></i> 
                         <div>kierunek.info@gmail.com</div>
                     </div>
                 </div>
             </div>
             <div class="right pre-animate">
+                <h1 class="contact-heading">Masz pytanie?</h1>
                 <form name="kontakt" class="form" method="POST" data-netlify="true" enctype="application/x-www-form-urlencoded">
                     <input name="imie" class="imie" type="text" placeholder="imię">
                     <input name="e-mail" class="email" type="email" placeholder="e-mail">
@@ -336,7 +346,5 @@
         </div>
     </div>
     <script type="module" src="scripts/index.js"></script>
-    <script src="scripts/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGAh0xzK3FLruvh3QlSCNSkPSwLmfWrMw&callback=initMap&libraries=places" async defer></script>
 </body>
 </html>

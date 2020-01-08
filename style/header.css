@@ -46,7 +46,7 @@
     z-index: 2;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
-    transition: all 1s ease-out;
+    transition: all .75s linear;
     box-shadow: 0px 15px 12px rgba(0, 0, 0, 0.22), 0px 19px 38px rgba(0, 0, 0, 0.3);
 }
 .menu-list{
@@ -71,7 +71,7 @@
     right: -100vw;
 }
 .menu .item.animate{
-    animation: slide-in .5s ease-out;
+    animation: slide-in .4s ease-out;
 }
 .menu.open{
     display: flex;
@@ -97,7 +97,7 @@
     justify-content: space-between;
     cursor: pointer;
     z-index: 2;
-    transition: transform 1s ease-out;
+    transition: transform .5s ease-out;
 }
 .menu-toggler.open{
     transform: rotate(45deg);
@@ -120,7 +120,7 @@
 }
 .cross.start{
     transform-origin: right;
-    transition: transform 1s cubic-bezier(0.54, -0.81, 0.57, 0.57)
+    transition: transform .8s cubic-bezier(0.54, -0.81, 0.57, 0.57)
 }
 .open .cross.start{
     transform: rotate(450deg) translateX(.8rem);
@@ -128,7 +128,7 @@
 .cross.end{
     align-self: flex-end;
     transform-origin: left;
-    transition: transform 1s cubic-bezier(0.54, -0.81, 0.57, 0.57)
+    transition: transform .8s cubic-bezier(0.54, -0.81, 0.57, 0.57)
 }
 .open .cross.end{
     transform: rotate(450deg) translateX(-.8rem);
@@ -196,6 +196,17 @@
 @media only screen and (min-width: 768px){
     .logo-img{
         width: 120px;
+    }
+}
+@media only screen and (max-width: 991px){
+    .menu{
+        transition: all .5s ease-out;
+    }
+    .menu .item.animate{
+        animation: slide-in .25s ease-out;
+    }
+    .menu-toggler{
+        transition: transform .3s ease-out;
     }
 }
 @media only screen and (min-width: 992px){
