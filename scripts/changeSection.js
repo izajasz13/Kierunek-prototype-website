@@ -36,13 +36,12 @@ export const changeSection = (current, next, animation) => {
         current.classList.add('hidden');
         next.classList.add('active');
         next.classList.remove('animate');
-        attachSectionListeners();
         next.removeEventListener('animationend', sectionAnimationEnd)
-        animateLeftAndRight(current, next)
+        animateLeftAndRight(current, next);
     }
     const menuAnimationEnd = (e) => {
-        animateLeftAndRight(current, next);
         menu.removeEventListener('transitionend', menuAnimationEnd);
+        animateLeftAndRight(current, next);
     }
     if(animation){
         next.addEventListener('animationend', sectionAnimationEnd)
@@ -52,7 +51,6 @@ export const changeSection = (current, next, animation) => {
         current.classList.remove('active')
         current.classList.add('hidden');
         next.classList.add('active');
-        attachSectionListeners();
         menu.addEventListener('transitionend', menuAnimationEnd);
     }
 }
@@ -130,4 +128,5 @@ const handleBorderText = (current, isDark) => {
 
 const sidePanelAnimationEnd = (e) => {
     e.currentTarget.classList.remove("animate");
+    attachSectionListeners();
 }

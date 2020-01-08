@@ -40,6 +40,7 @@ const onTouchEnd = (e) => {
 }
 
 const onScrollSections = (e) => {
+    console.log(e);
     if(!menu.classList.contains('open') && !isMoreInfoOpen()){
         const sections = document.querySelectorAll('.section');
         const current = document.querySelector('.active')
@@ -132,14 +133,6 @@ const onNavbarClose = () => {
 const menuItems = document.querySelectorAll('.item');
 const burger = document.querySelector('.menu-toggler');
 const logo = document.querySelector('div.logo')
-export const attachSectionListeners = () => {
-    burger.addEventListener('click', onBurgerClick);
-    window.addEventListener('touchstart', onTouchStart);
-    window.addEventListener('touchend', onTouchEnd);
-    window.addEventListener('wheel', onScrollSections);
-    menuItems.forEach(ele => ele.addEventListener('click', onClickMenuItem));
-    logo.addEventListener('click', onLogoClick);
-}
 
 export const removeSectionListeners = () => {
     burger.removeEventListener('click', onBurgerClick);
@@ -148,4 +141,13 @@ export const removeSectionListeners = () => {
     window.removeEventListener('wheel', onScrollSections);
     menuItems.forEach(ele => ele.removeEventListener('click', onClickMenuItem));
     logo.removeEventListener('click', onLogoClick);
+}
+
+export const attachSectionListeners = () => {
+    burger.addEventListener('click', onBurgerClick);
+    window.addEventListener('touchstart', onTouchStart);
+    window.addEventListener('touchend', onTouchEnd);
+    window.addEventListener('wheel', onScrollSections);
+    menuItems.forEach(ele => ele.addEventListener('click', onClickMenuItem));
+    logo.addEventListener('click', onLogoClick);
 }
