@@ -40,7 +40,6 @@ const onTouchEnd = (e) => {
 }
 
 const onScrollSections = (e) => {
-    console.log(e);
     if(!menu.classList.contains('open') && !isMoreInfoOpen()){
         const sections = document.querySelectorAll('.section');
         const current = document.querySelector('.active')
