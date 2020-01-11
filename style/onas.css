@@ -55,6 +55,12 @@
     width: auto;
     overflow: hidden;
 }
+.onas .description h2{
+    font-family: var(--sans-serif-font);
+}
+.onas .description > *{
+    margin: 1%;
+}
 .onas .left{
     font-family: var(--sans-serif-font);
 }
