@@ -1,3 +1,2 @@
-# Kierunek-prototyp
-Prototyp strony Kościoła Kierunek, kod dostosowany za pomocą Babela do starszych wersji przeglądarek:
-https://clever-swanson-fbc33f.netlify.app
+# Kierunek-prototype-website
+Prototype of website for Kierunek Church, Babel was used to allow older browsers support: [link](https://clever-swanson-fbc33f.netlify.app)
